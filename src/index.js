@@ -6,11 +6,11 @@ const { DescribeService } = require('./apis')
 class TencentComponent extends Component {
   async initCredential() {
     const temp = this.context.instance.state.status
+    this.context.instance.state.status = true
     let { tencent } = this.context.credentials
     if (!tencent) {
       tencent = await getTempKey(temp)
       this.context.credentials.tencent = tencent
-      this.context.instance.state.status = true
     }
   }
 
