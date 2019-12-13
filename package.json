@@ -21,8 +21,8 @@
     "prettier:fix": "prettier --write **/*.{css,html,js,json,md,yaml,yml}",
     "prepare-release": "standard-version && prettier --write CHANGELOG.md"
   },
-  "author": "Tencent Cloud, Inc.",
-  "license": "Apache",
+  "author": "yugasun",
+  "license": "MIT",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -30,18 +30,17 @@
     }
   },
   "lint-staged": {
-    "**/*.*": [
-      "eslint --fix --ext .js,.ts,.tsx .",
+    "**/*.{js,.ts,.tsx}": [
+      "npm run lint:fix",
       "git add"
     ],
     "**/*.{css,html,js,json,md,yaml,yml}": [
-      "prettier -c",
+      "npm run prettier:fix",
       "git add"
     ]
   },
   "standard-version": {
     "skip": {
-      "commit": true,
       "tag": true
     }
   },

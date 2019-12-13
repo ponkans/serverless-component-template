@@ -6,7 +6,7 @@
 # serverless.yml
 
 MyComponent:
-  component: ../
+  component: 'serverless-component-template'
   inputs:
     region: ap-guangzhou
 ```
@@ -15,6 +15,6 @@ MyComponent:
 
 Main param description
 
-| 参数名称 | 是否必选 | 默认 | 描述 |
-| -------- | -------- | ---- | ---- |
-| region   | 是       |      | 地域 |
+| Name   | Required | Default         | Decription |
+| ------ | -------- | --------------- | ---------- |
+| region | true     | `ap-guangzhouF` | region     |
