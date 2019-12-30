@@ -19,7 +19,7 @@
     "lint:fix": "eslint --fix --ext .js,.ts,.tsx .",
     "prettier": "prettier --check **/*.{css,html,js,json,md,yaml,yml}",
     "prettier:fix": "prettier --write **/*.{css,html,js,json,md,yaml,yml}",
-    "prepare-release": "standard-version && prettier --write CHANGELOG.md"
+    "release": "standard-version"
   },
   "author": "yugasun",
   "license": "MIT",
@@ -32,16 +32,16 @@
   "lint-staged": {
     "**/*.{js,.ts,.tsx}": [
       "npm run lint:fix",
-      "git add"
+      "git add ."
     ],
     "**/*.{css,html,js,json,md,yaml,yml}": [
       "npm run prettier:fix",
-      "git add"
+      "git add ."
     ]
   },
   "standard-version": {
     "skip": {
-      "tag": true
+      "tag": false
     }
   },
   "dependencies": {
